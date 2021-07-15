@@ -1,0 +1,21 @@
+<nav>
+    <span style="float:right">
+        {% if user.is_authenticated %}
+            <span>Hi {{ user.username }}!</span>
+             <span><a href="{% url 'logout'%}">LogOut</a></span>
+        {% else %}
+            <span><a href="{% url 'login'%}">LogIn</a></span>
+        {% endif %}
+    </span>
+    </span>
+</nav>
+<form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    <div>
+        <span>incident message:</span>
+        <input type="text" name="incident_message" id="incident_message">
+        <span>position:</span>
+        <input type="text" name="position" id="position">
+        <button type="submit">Submit</button>
+    </div>
+</form>

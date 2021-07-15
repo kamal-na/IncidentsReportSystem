@@ -1,0 +1,4 @@
+{
+    "url": "http://monitoring/get_incidents?start=0",
+    "wait_time": 5
+}
